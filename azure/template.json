@@ -1,0 +1,80 @@
+{
+  "$schema":
+    "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "containerGroups_vsts_agent_ascom_staging_name": {
+      "defaultValue": "vsts-agent-ascom-staging",
+      "type": "String"
+    },
+    "imageRegistryPassword": {
+      "type": "securestring"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "comments":
+        "Generalized from resource: '/subscriptions/ff161cf1-49ad-472d-8ff5-b8db96aa2b0e/resourceGroups/vsts-agent-ascom-staging/providers/Microsoft.ContainerInstance/containerGroups/vsts-agent-ascom-staging'.",
+      "type": "Microsoft.ContainerInstance/containerGroups",
+      "name": "[parameters('containerGroups_vsts_agent_ascom_staging_name')]",
+      "apiVersion": "2018-04-01",
+      "location": "westus",
+      "scale": null,
+      "properties": {
+        "containers": [
+          {
+            "name":
+              "[parameters('containerGroups_vsts_agent_ascom_staging_name')]",
+            "properties": {
+              "image":
+                "ascomtest-alaskaair.azurecr.io/vsts-agent-image:1350191",
+              "command": [],
+              "ports": [
+                {
+                  "protocol": "TCP",
+                  "port": 80
+                },
+                {
+                  "protocol": "TCP",
+                  "port": 448
+                }
+              ],
+              "environmentVariables": [],
+              "resources": {
+                "requests": {
+                  "memoryInGB": 4,
+                  "cpu": 1
+                }
+              }
+            }
+          }
+        ],
+        "imageRegistryCredentials": [
+          {
+            "server": "ascomtest-alaskaair.azurecr.io",
+            "username": "ascomtest",
+            "password": "[parameters('imageRegistryPassword')]"
+          }
+        ],
+        "restartPolicy": "Always",
+        "ipAddress": {
+          "ports": [
+            {
+              "protocol": "TCP",
+              "port": 80
+            },
+            {
+              "protocol": "TCP",
+              "port": 443
+            }
+          ],
+          "ip": "40.78.47.170",
+          "type": "Public"
+        },
+        "osType": "Linux"
+      },
+      "dependsOn": []
+    }
+  ]
+}
