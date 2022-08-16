@@ -39,6 +39,6 @@ steps:
 
 - script: |
     set DEBUG=cypress:server* ...
-    npx cypress run --browser chrome
+    npx cypress run --browser electron
   displayName: 'Cypress Test'
   continueOnError: true
