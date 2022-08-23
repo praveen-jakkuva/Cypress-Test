@@ -8,8 +8,7 @@ trigger:
 
 pool:
  name: 'AsCom-TukAgentPool'
- demands:
- -Agent.Name -equals IGQQAASV-PJAKKU 
+ demands: -Agent.Name -equals IGQQAASV-PJAKKU 
 
 
 
