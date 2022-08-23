@@ -6,7 +6,11 @@
 trigger:
 - azure-pipelines
 
-pool: 'AsCom-TukAgentPool'
+pool:
+ name: 'AsCom-TukAgentPool'
+ demands:
+ -Agent.Name: IGQQAASV-PJAKKU
+
 
 
 steps:
