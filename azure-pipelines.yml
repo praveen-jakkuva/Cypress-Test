@@ -8,7 +8,7 @@ trigger:
 
 pool:
  name: 'AsCom-TukAgentPool'
- demands: -Agent.Name -equals IGQQAASV-PJAKKU -Agent.Version -equals 2.206.1
+ demands: -Agent.Version -equals 2.206.1
 
 
 
