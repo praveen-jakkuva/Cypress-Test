@@ -6,10 +6,10 @@
 trigger:
 - azure-pipelines
 
-pool:
- name: 'AsCom-TukAgentPool'
-#  demands: -Agent.Name -equals IGQQAASV-PJAKKU -Agent.Version -equals 2.206.1
-
+pool: 
+  name: 'AsCom-TukAgentPool'
+  demands:
+   - Agent.Name -equals IGQQAASV-PJAKKU
 
 
 steps:
